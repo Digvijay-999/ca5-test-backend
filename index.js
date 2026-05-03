@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const authRoutes = require("./routes/auth.routes"); // ✅ added
+const taskRoutes = require("./routes/task.routes"); // 👈 ADD
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 // ✅ connect routes
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes); // 👈 ADD
 
 // simple route
 app.get("/", (req, res) => {
